@@ -1,0 +1,6 @@
+# 開發用檔案，不部署（開頭的 / 代表只排除根目錄那一層）
+/rwd-preview.html
+/og/
+/templates/
+/preview/
+/backend/

@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 導入與自動化實戰電子報｜免費訂閱｜ai大師</title>
+<meta name="description" content="寫給中小企業與 AI 學習者的實戰電子報，每期三單元：導入案例拆解、AI 工具實測、學習路徑。創刊號編輯中，免費訂閱、一鍵退訂。">
+<meta name="keywords" content="AI電子報,AI自動化案例,AI工具評測,AI學習資源,中小企業AI">
+<!-- 社群分享（Open Graph） -->
+<meta property="og:site_name" content="ai大師">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="AI 導入與自動化實戰電子報｜ai大師">
+<meta property="og:description" content="每期三單元：導入案例拆解、AI 工具實測、學習路徑。創刊號編輯中，免費訂閱。">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="https://akangdesigner.github.io/ai-brand-site/newsletter.html">
+<meta property="og:image" content="https://akangdesigner.github.io/ai-brand-site/assets/og/og-newsletter.png">
+<link rel="canonical" href="https://akangdesigner.github.io/ai-brand-site/newsletter.html">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<script>
+/* ================================================================
+   設定（對應 Claude Design NewsletterV2 的可調參數）
+   ================================================================ */
+var CONFIG = {
+  styleDraft: 'c',       // 'orig' 原版滿版大圖 | 'a' 原版＋藍色訂閱彈窗 | 'b' 白底黑白照編排 | 'c' 藍色雙色調滿版
+  motion: 'force',       // 'force' 強制播放動畫 | 'system' 跟隨系統「減少動態效果」設定
+  trail: 'full',         // 滑鼠拖尾：'full' 光軌＋粒子 | 'line' 僅光軌 | 'off' 關閉
+  trailColor: '#7fa0ff', // 拖尾顏色，設計稿選項：#7fa0ff / #3ee0c8 / #ffffff / #2f5bea
+  modalDelay: 1800,      // 草案 A：彈窗延遲（毫秒）
+  showIssue: true,       // 是否顯示「範例預覽」區塊
+  progress: 64           // 創刊號編輯進度（0–100）
+};
+document.documentElement.setAttribute('data-draft', CONFIG.styleDraft);
+document.documentElement.setAttribute('data-motion', CONFIG.motion);
+document.documentElement.style.setProperty('--progress', CONFIG.progress + '%');
+window.TRAIL = { mode: CONFIG.trail, color: CONFIG.trailColor };
+</script>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+:root{--blue-600:#2f5bea}
+@keyframes yl-pop{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.anim-pop{animation:yl-pop .9s cubic-bezier(.2,.7,.2,1) .4s both}
+
+/* 依草案切換 Hero */
+.hv{display:none}
+html[data-draft="orig"] .hv-orig,html[data-draft="a"] .hv-orig{display:flex}
+html[data-draft="b"] .hv-b{display:block}
+html[data-draft="c"] .hv-c{display:flex}
+
+/* 共用：藍色訂閱盒的表單 */
+.go-form{display:flex;gap:16px}
+.go-form input{flex:1;min-width:0;padding:12px 16px;font:inherit;font-size:15px;background:#fff;border:0;border-radius:0;color:var(--ink-950);outline:none}
+.go-form input:focus{box-shadow:inset 0 0 0 2px var(--ink-950)}
+.go-form button,.ghost-w{position:relative;overflow:hidden;isolation:isolate;font-family:var(--sans);font-size:15px;font-weight:700;padding:0 26px;border:1px solid #fff;background:transparent;color:#fff;cursor:pointer;letter-spacing:.06em;transition:color .35s cubic-bezier(.7,0,.2,1)}
+.go-form button::before,.ghost-w::before{content:"";position:absolute;inset:0;z-index:-1;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.go-form button:hover,.go-form button:focus-visible,.ghost-w:hover,.ghost-w:focus-visible{color:var(--blue-600)}
+.go-form button:hover::before,.go-form button:focus-visible::before,.ghost-w:hover::before,.ghost-w:focus-visible::before{transform:scaleX(1);transform-origin:left}
+.ghost-w{padding:10px;font-weight:500;letter-spacing:0;width:100%}
+.blue-box .ok{color:#fff;margin:0}
+.blue-box .fine{color:#fff;opacity:.85;margin:0}
+
+/* ===== 草案 C：藍色雙色調滿版 ===== */
+.hv-c{position:relative;overflow:hidden;min-height:720px;align-items:center;border-bottom:1px solid var(--line)}
+.hv-c .duo{position:absolute;inset:0;filter:grayscale(1) contrast(1.1)}
+.hv-c .duo img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
+.hero-bg img{object-position:50% 55%}
+.hv-c .screen{position:absolute;inset:0;pointer-events:none;background:var(--blue-600);mix-blend-mode:screen;opacity:.9}
+.hv-c .shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(7,9,13,.55) 0%,rgba(7,9,13,0) 50%)}
+.hv-c .inner{position:relative;z-index:1;width:100%;max-width:1120px;margin:0 auto;padding:112px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:32px}
+.hv-c h1{margin:0;font-size:clamp(44px,7vw,88px);line-height:1.08;font-weight:900;color:#fff;letter-spacing:.01em;text-shadow:0 2px 24px rgba(7,9,13,.25)}
+.hv-c h1 em{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:#fff}
+.blue-box{width:100%;max-width:520px;background:var(--blue-600);padding:32px 36px;display:grid;gap:20px;text-align:left;color:#fff}
+.blue-box>p:first-child{margin:0;font-size:17px;line-height:1.6;font-weight:500}
+.empty-tag{position:absolute;top:0;right:0;padding:24px 24px 0 0;font-family:var(--mono);font-size:12px;color:#fff;opacity:.6;text-align:right;z-index:1}
+
+/* ===== 草案 B：白底黑白照編排 ===== */
+.hv-b{position:relative;background:#fff;color:var(--ink-950);min-height:720px;overflow:hidden;border-bottom:1px solid #e3e6ec}
+.hv-b .photo{position:absolute;left:0;top:0;bottom:0;width:44%;filter:grayscale(1) contrast(1.05);background:#d9dde3}
+.hv-b .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.hv-b .photo .empty{position:absolute;left:0;bottom:0;padding:0 0 24px 24px;font-family:var(--mono);font-size:12px;color:var(--ink-950);opacity:.6}
+.hv-b .blue-box{position:absolute;left:calc(44% - 340px);top:72px;width:420px;max-width:none;padding:40px 44px 44px;gap:22px;box-shadow:0 24px 60px rgba(7,9,13,.18)}
+.hv-b .blue-box .big{font-weight:900;font-size:40px;line-height:1.1;letter-spacing:.02em}
+.hv-b .blue-box p.d{margin:0;font-size:16px;line-height:1.6}
+.hv-b .copy{position:absolute;left:calc(44% + 140px);right:48px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:28px}
+.hv-b .copy .k{margin:0;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--blue-600)}
+.hv-b h1{margin:0;font-size:clamp(30px,3.6vw,60px);line-height:1.12;font-weight:900}
+.hv-b h1 span{white-space:nowrap;display:inline-block}
+.hv-b .copy p.d{margin:0;font-size:17px;color:#3a4250;max-width:460px}
+.hv-b .cta{display:flex;align-items:center;gap:12px;font-weight:700;font-size:14px;letter-spacing:.14em;color:var(--ink-950);text-decoration:none}
+.hv-b .cta:hover{color:var(--blue-600)}
+.hv-b .cta .arr{font-family:var(--mono)}
+
+/* ===== 草案 A：訂閱彈窗 ===== */
+.modal{position:fixed;inset:0;z-index:50;background:rgba(7,9,13,.55);display:flex;align-items:center;justify-content:center;padding:20px}
+.modal-card{width:440px;max-width:100%;background:var(--blue-600);color:#fff;box-shadow:0 30px 80px rgba(0,0,0,.45);animation:yl-pop .6s cubic-bezier(.2,.7,.2,1) both}
+.modal-top{position:relative;height:250px;overflow:hidden;background:var(--ink-900)}
+.modal-top .duo{position:absolute;inset:0;filter:grayscale(1) contrast(1.1)}
+.modal-top .duo img{width:100%;height:100%;object-fit:cover;display:block}
+.modal-top .screen{position:absolute;inset:0;background:var(--blue-600);mix-blend-mode:screen;opacity:.85}
+.modal-top .t{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:52px;line-height:1.05;text-align:center;letter-spacing:.04em;text-shadow:0 2px 20px rgba(7,9,13,.25);margin:0}
+.modal-body{padding:30px 48px 40px;display:grid;gap:22px}
+.modal-body>p:first-child{margin:0;font-size:17px;line-height:1.5;font-weight:500}
+
+/* 範例預覽 */
+.issue{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:40px}
+.issue-side{font-family:var(--mono);font-size:13px;color:var(--dim)}
+.issue-side div{padding:10px 0;border-bottom:1px solid var(--line)}
+.issue-side b{display:block;color:var(--text);font-weight:500}
+.mail{border:1px solid var(--line-2);background:var(--bg-2)}
+.mail-head{padding:18px 24px;border-bottom:1px solid var(--line-2);font-family:var(--mono);font-size:13px;color:var(--dim)}
+.mail-head strong{color:var(--text);font-family:var(--sans);font-size:17px;display:block;margin-top:4px}
+.mail-body{padding:8px 24px 24px}
+.item{padding:20px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:64px 1fr;gap:16px}
+.item:last-child{border-bottom:0}
+.item .lbl{font-family:var(--mono);font-size:12px;color:var(--accent);padding-top:3px}
+.item h4{margin:0 0 6px;font-size:16px}
+.item p{margin:0;color:var(--muted);font-size:14px}
+.sample-flag{font-family:var(--mono);font-size:12px;color:var(--dim);margin-top:12px}
+
+@media (max-width:960px){
+  .hv-b{min-height:0}
+  .hv-b .photo{position:relative;width:100%;height:360px}
+  .hv-b .blue-box{position:relative;left:auto;top:auto;width:auto;margin:-80px 16px 0;padding:32px 28px}
+  .hv-b .copy{position:relative;left:auto;right:auto;padding:48px 16px 64px;gap:20px}
+  .hv-b h1 span{white-space:normal}
+}
+@media (max-width:860px){
+  .issue{grid-template-columns:1fr;gap:12px}
+  .issue-side{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+  .mail-head,.mail-body{padding-left:16px;padding-right:16px}
+  .item{grid-template-columns:1fr;gap:4px}
+  .hv-c{min-height:600px}
+  .hv-c h1{font-size:clamp(30px,9vw,44px);text-wrap:balance}
+  .hv-c .inner{padding:80px 16px}
+  .blue-box{padding:26px 22px}
+  .modal-body{padding:26px 24px 30px}
+}
+@media (max-width:420px){
+  .go-form{flex-direction:column;gap:10px}
+  .go-form button{padding:12px}
+}
+html:not([data-motion="force"]) .anim-pop,html:not([data-motion="force"]) .modal-card{animation:none}
+@media (prefers-reduced-motion:reduce){
+  html:not([data-motion="force"]) .anim-pop,html:not([data-motion="force"]) .modal-card{animation:none}
+}
+</style>
+</head>
+<body data-page="newsletter">
+<nav class="site"></nav>
+
+<!-- ===== HERO 草案 C：藍色雙色調滿版（預設） ===== -->
+<header class="hv hv-c">
+  <div class="duo" data-img="assets/img/hero.jpg"><img alt="" hidden><div class="empty empty-tag">Hero 大圖（2400×1350+）<br>放到 assets/img/hero.jpg</div></div>
+  <div class="screen"></div>
+  <div class="shade"></div>
+  <div class="inner">
+    <h1 class="anim-wipe">AI 導入與自動化的<br>實戰電子報</h1>
+    <div class="blue-box js-sub anim-fade" style="animation-delay:1s">
+      <p>訂閱電子報，收到實際做過的流程、測過的工具、走過的彎路。</p>
+      <form class="go-form" novalidate>
+        <input type="email" name="email" placeholder="輸入你的 Email" aria-label="Email">
+        <button type="submit">GO</button>
+      </form>
+      <p class="ok" role="status" hidden>&gt; 已收到。確認信寄出，請至信箱完成驗證。</p>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO 草案 B：白底黑白照編排 ===== -->
+<header class="hv hv-b">
+  <div class="photo" data-img="assets/img/portrait.jpg"><img alt="" hidden><div class="empty">人物照（黑白）· assets/img/portrait.jpg</div></div>
+  <div class="blue-box js-sub anim-pop">
+    <div class="big">立即訂閱</div>
+    <p class="d">每期整理 AI 導入與自動化的實戰案例、工具實測與學習資源。</p>
+    <form class="go-form" novalidate>
+      <input type="email" name="email" placeholder="輸入你的 Email" aria-label="Email">
+      <button type="submit">GO</button>
+    </form>
+    <p class="ok" role="status" hidden>&gt; 已收到。確認信寄出，請至信箱完成驗證。</p>
+    <p class="mono" style="margin:0;font-size:13px;opacity:.85">// 免費 · 一鍵退訂 · 不轉售個資</p>
+  </div>
+  <div class="copy">
+    <p class="k">NEWSLETTER · ISSUE 001</p>
+    <h1 class="anim-wipe"><span>AI 導入與自動化的</span><br><span>實戰電子報</span></h1>
+    <p class="d">寫給想導入 AI 的中小企業，以及正在學 AI 的新手與中階使用者。每期整理實際做過的流程、測過的工具、走過的彎路。</p>
+    <a class="cta" href="contact.html#form"><span class="arr">→</span>預約諮詢</a>
+  </div>
+</header>
+
+<!-- ===== HERO 原版／草案 A：滿版大圖 ===== -->
+<header class="hv hv-orig hero-image">
+  <div class="hero-bg is-empty" data-img="assets/img/hero.jpg">
+    <img alt="" hidden>
+    <div class="empty">Hero 大圖（2400×1350+）<br>放到 assets/img/hero.jpg</div>
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="inner">
+    <div class="copy">
+      <p class="eyebrow center anim-fade">NEWSLETTER · ISSUE 001</p>
+      <h1 class="anim-wipe">AI 導入與自動化的<br><em>實戰電子報</em></h1>
+      <p class="lead anim-fade d-9">寫給想導入 AI 的中小企業，以及正在學 AI 的新手與中階使用者。每期整理實際做過的流程、測過的工具、走過的彎路。</p>
+      <div class="js-sub anim-fade d-11">
+        <form class="sub-form" novalidate>
+          <input type="email" name="email" placeholder="輸入你的 Email" aria-label="Email">
+          <button type="submit">訂閱 →</button>
+        </form>
+        <p class="fine">// 免費 · 一鍵退訂 · 不轉售個資</p>
+        <p class="ok" role="status" hidden>&gt; 已收到。確認信寄出，請至信箱完成驗證。</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 01 每期內容 ===== -->
+<section class="blk">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">01 / 每期內容</div>
+      <div><h2>每一期都是三個固定單元</h2><p>結構固定，讀起來快，需要的時候也好回頭查。</p></div>
+    </div>
+    <div class="units">
+      <div class="unit reveal"><div class="n">[ 01 ] CASE</div><h3>導入拆解</h3><p>一個真實的自動化或 AI 導入流程，從問題、工具選擇到上線後的調整，完整拆開來看。</p></div>
+      <div class="unit reveal"><div class="n">[ 02 ] TOOL</div><h3>工具實測</h3><p>實際操作過的 AI 工具：適合什麼情境、限制在哪、成本多少，不寫沒用過的東西。</p></div>
+      <div class="unit reveal"><div class="n">[ 03 ] LEARN</div><h3>學習路徑</h3><p>給新手與中階使用者的練習題與資源，每期往前推進一小步。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 02 範例預覽 ===== -->
+<section class="blk" id="issue">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">02 / 範例預覽</div>
+      <div><h2>一期電子報長這樣</h2><p>以下為版型示意，實際內容以創刊號為準。</p></div>
+    </div>
+    <div class="issue reveal">
+      <div class="issue-side">
+        <div>格式<b>Email · 純文字友善</b></div>
+        <div>篇幅<b>約 5 分鐘閱讀</b></div>
+        <div>單元<b>導入 / 工具 / 學習</b></div>
+        <div>分眾<b>企業 · 學習者</b></div>
+      </div>
+      <div class="mail">
+        <div class="mail-head">ISSUE #001 · 範例<strong>把每週 4 小時的報表整理交給自動化</strong></div>
+        <div class="mail-body">
+          <div class="item"><div class="lbl">CASE</div><div><h4>從 Excel 手動彙整到自動產出週報</h4><p>需求盤點、工具選擇、串接步驟，以及第一週踩到的三個問題。</p></div></div>
+          <div class="item"><div class="lbl">TOOL</div><div><h4>三款自動化工具的實際使用比較</h4><p>上手難度、免費額度、適合的團隊規模。</p></div></div>
+          <div class="item"><div class="lbl">LEARN</div><div><h4>本期練習：寫出第一個能重複使用的提示詞</h4><p>附範本與常見錯誤說明。</p></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="sample-flag">* 範例標題僅示意版型，非已發佈內容。</p>
+  </div>
+</section>
+
+<!-- ===== 03 創刊號狀態 ===== -->
+<section class="blk">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">03 / 創刊號狀態</div>
+      <div><h2>創刊號編輯中</h2><p>發送時會直接寄到訂閱者信箱。</p></div>
+    </div>
+    <div class="panel reveal" style="max-width:640px">
+      <div class="panel-head"><span>issue_001.status</span><span class="dots"><i></i><i></i><i></i></span></div>
+      <div class="panel-body">
+        <div class="row"><span class="k">期數</span><span>創刊號 #001</span></div>
+        <div class="row"><span class="k">狀態</span><span class="hl">編輯中</span></div>
+        <div class="row"><span class="k">固定單元</span><span>3 個</span></div>
+        <div class="row"><span class="k">閱讀時間</span><span>約 5 分鐘</span></div>
+        <div class="row"><span class="k">讀者</span><span>開放首批訂閱</span></div>
+        <div class="bar"><div></div></div>
+        <div class="bar-label"><span>編輯進度</span><span class="cursor">drafting</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 適合誰 ===== -->
+<section class="blk">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-no">04 / 適合誰</div>
+      <div><h2>兩種讀者，同一份電子報</h2><p>訂閱後可以選擇身分，我們會依你的需求調整內容重點。</p></div>
+    </div>
+    <div class="aud reveal">
+      <div>
+        <div class="who">FOR BUSINESS</div><h3>中小企業</h3>
+        <ul><li>想導入 AI，但不確定從哪個流程開始</li><li>團隊花大量時間在重複性工作</li><li>需要評估工具成本與效益</li></ul>
+      </div>
+      <div>
+        <div class="who">FOR LEARNERS</div><h3>AI 學習者</h3>
+        <ul><li>剛開始接觸 AI，想要有系統的入門方式</li><li>已經會基本操作，想進階到實際應用</li><li>想知道哪些工具值得花時間學</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap reveal">
+    <p class="eyebrow center">ISSUE 001 · 編輯中</p>
+    <h2>創刊號發送時，直接寄到你的信箱</h2>
+    <p class="lead">現在訂閱，你會是第一批收到的讀者。</p>
+    <div class="js-sub">
+      <form class="sub-form" novalidate>
+        <input type="email" name="email" placeholder="輸入你的 Email" aria-label="Email">
+        <button type="submit">訂閱 →</button>
+      </form>
+      <p class="ok" role="status" hidden>&gt; 已收到。確認信寄出，請至信箱完成驗證。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 草案 A：訂閱彈窗 ===== -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-t" hidden>
+  <div class="modal-card">
+    <div class="modal-top">
+      <div class="duo" data-img="assets/img/modal.jpg"><img alt="" hidden></div>
+      <div class="screen"></div>
+      <p class="t" id="modal-t">立即<br>訂閱</p>
+    </div>
+    <div class="modal-body js-sub blue-box" style="max-width:none;padding:30px 48px 40px">
+      <p>訂閱電子報，收到 AI 導入案例、工具實測與學習資源。</p>
+      <form class="go-form" novalidate>
+        <input type="email" name="email" placeholder="輸入你的 Email" aria-label="Email">
+        <button type="submit">GO</button>
+      </form>
+      <p class="ok" role="status" hidden>&gt; 已收到。確認信寄出，請至信箱完成驗證。</p>
+      <button type="button" class="ghost-w" data-close>不用了，謝謝</button>
+    </div>
+  </div>
+</div>
+
+<footer class="site"></footer>
+<script src="assets/site.js"></script>
+<script src="assets/trail.js"></script>
+<script>
+(function () {
+  if (!CONFIG.showIssue) document.getElementById('issue').hidden = true;
+
+  // 草案 A：延遲跳出訂閱彈窗（每次瀏覽只跳一次）
+  var modal = document.getElementById('modal');
+  var lastFocus = null;
+  function closeModal() {
+    modal.hidden = true;
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus) lastFocus.focus();
+  }
+  function onKey(e) { if (e.key === 'Escape') closeModal(); }
+  modal.addEventListener('click', function (e) { if (e.target === modal || e.target.hasAttribute('data-close')) closeModal(); });
+  modal.querySelector('form').addEventListener('submit', function () {
+    setTimeout(function () { if (modal.querySelector('form').hidden) modal.querySelector('[data-close]').textContent = '關閉'; }, 0);
+  });
+  if (CONFIG.styleDraft === 'a') {
+    var seen = false;
+    try { seen = sessionStorage.getItem('nl-modal') === '1'; } catch (e) {}
+    if (!seen) setTimeout(function () {
+      lastFocus = document.activeElement;
+      modal.hidden = false;
+      modal.querySelector('input').focus();
+      document.addEventListener('keydown', onKey);
+      try { sessionStorage.setItem('nl-modal', '1'); } catch (e) {}
+    }, CONFIG.modalDelay);
+  }
+})();
+</script>
+</body>
+</html>

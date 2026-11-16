@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>聯絡我們｜預約 AI 導入與自動化諮詢｜ai大師</title>
+<meta name="description" content="填寫表單預約 AI 導入、流程自動化、團隊培訓或個人 AI 課程諮詢。簡單描述需求即可，不需要先準備技術資料，我們會以 Email 回覆。">
+<meta name="keywords" content="AI諮詢,AI導入諮詢,自動化諮詢,AI課程報名,聯絡ai大師">
+<!-- 社群分享（Open Graph） -->
+<meta property="og:site_name" content="ai大師">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="預約 AI 導入與自動化諮詢｜ai大師">
+<meta property="og:description" content="簡單描述需求即可，不需要先準備技術資料，我們會以 Email 回覆。">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="https://akangdesigner.github.io/ai-brand-site/contact.html">
+<meta property="og:image" content="https://akangdesigner.github.io/ai-brand-site/assets/og/og-contact.png">
+<link rel="canonical" href="https://akangdesigner.github.io/ai-brand-site/contact.html">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-page="contact">
+<nav class="site"></nav>
+
+<header class="hero-grid compact">
+  <div class="grid-lines"></div><div class="glow"></div>
+  <div class="wrap inner">
+    <div>
+      <p class="eyebrow anim-fade">CONTACT</p>
+      <h1 class="anim-wipe">聯絡我們</h1>
+      <p class="lead anim-fade d-6">簡單描述你的需求就可以，不需要先準備技術資料。我們會在收到後回覆，說明下一步。</p>
+    </div>
+  </div>
+</header>
+
+<section class="blk" id="form">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-no">01 / 諮詢表單</div>
+      <div>
+        <form id="contact-form" class="form" novalidate>
+          <div class="two">
+            <div class="field">
+              <label for="c-name">姓名</label>
+              <input id="c-name" name="name" autocomplete="name" data-required>
+              <div class="err" hidden>請填寫姓名</div>
+            </div>
+            <div class="field">
+              <label for="c-email">EMAIL</label>
+              <input id="c-email" name="email" type="email" autocomplete="email" data-required>
+              <div class="err" hidden>請輸入有效的 Email</div>
+            </div>
+          </div>
+          <fieldset class="field">
+            <legend>你是</legend>
+            <div class="seg">
+              <input type="radio" name="role" id="c-biz" value="business" checked><label for="c-biz">企業／團隊</label>
+              <input type="radio" name="role" id="c-learn" value="learner"><label for="c-learn">個人學習者</label>
+            </div>
+          </fieldset>
+          <div class="two">
+            <div class="field">
+              <label for="c-type">想了解的服務</label>
+              <select id="c-type" name="type">
+                <option>AI 導入顧問</option>
+                <option>流程自動化建置</option>
+                <option>團隊 AI 培訓</option>
+                <option>個人 AI 課程</option>
+                <option>還不確定</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="c-company">公司名稱 <span class="opt">（選填）</span></label>
+              <input id="c-company" name="company" autocomplete="organization">
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-msg">需求說明</label>
+            <textarea id="c-msg" name="message" placeholder="例如：每週要花很多時間整理報表，想知道能不能自動化。" data-required></textarea>
+            <div class="err" hidden>請簡單描述你的需求</div>
+          </div>
+          <!-- 防垃圾訊息：真人看不到這個欄位 -->
+          <div style="position:absolute;left:-9999px" aria-hidden="true"><label>網站<input name="website" tabindex="-1" autocomplete="off"></label></div>
+          <button class="btn" type="submit">送出 →</button>
+          <p class="err" id="contact-fail" role="alert" hidden>送出失敗，請檢查網路後再試一次。</p>
+          <p class="fine" style="margin:0">// 資料僅用於回覆此次諮詢</p>
+        </form>
+        <div id="contact-ok" class="panel" role="status" hidden>
+          <div class="panel-head"><span>request.sent</span><span class="dots"><i></i><i></i><i></i></span></div>
+          <div class="panel-body">
+            <div class="row"><span class="k">狀態</span><span class="hl">已收到</span></div>
+            <div class="row"><span class="k">下一步</span><span>我們會以 Email 回覆</span></div>
+            <div class="row" id="contact-test" hidden><span class="k">測試模式</span><span>尚未連接 Google 試算表，資料未送出</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-no">02 / 其他方式</div>
+      <div>
+        <h2>其他聯絡方式</h2>
+        <div class="spec" style="margin-top:24px">
+          <!-- TODO：替換為實際資訊 -->
+          <div class="r"><div>EMAIL</div><div class="todo">待補</div></div>
+          <div class="r"><div>線上預約</div><div class="todo">待補（如 Calendly／Google 日曆預約連結）</div></div>
+          <div class="r"><div>社群</div><div class="todo">待補（LinkedIn · YouTube · Threads）</div></div>
+          <div class="r"><div>電子報</div><div><a class="text-link" href="newsletter.html">訂閱實戰電子報 →</a></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site"></footer>
+<script src="assets/site.js"></script>
+</body>
+</html>
